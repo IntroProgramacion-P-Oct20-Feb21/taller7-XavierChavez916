@@ -43,8 +43,9 @@ public class Ejemplo04 {
         // contador para saber el número de iteraciones
         int contadorIteraciones = 0;
         // variables para promedio
-        int promedioEdad;
+        double promedioEdad;
         double promedioEstatura;
+        String cadena_edad="";
         cadenaReporte = String.format("%s%s\n", cadenaReporte, 
                 "Listado de Jugadores");
         
@@ -64,6 +65,7 @@ public class Ejemplo04 {
             sumaEstaturas = sumaEstaturas + estatura;
             // agrego una iteración
             contadorIteraciones = contadorIteraciones + 1;
+            cadena_edad = String.format("%s %s",cadena_edad,edad);
             
             // Ejmplo 1. Alexander Dominguez -Arquero-, edad 32, estatura 1.95
             cadenaReporte = String.format("%s%d.) %s -%s-, edad %d, "
@@ -76,6 +78,7 @@ public class Ejemplo04 {
                     estatura);
             
             entrada.nextLine();
+            
             System.out.println("Desea salir del ciclo; digite: si");
             salir = entrada.nextLine();
             if(salir.equals("si")){
@@ -83,16 +86,17 @@ public class Ejemplo04 {
             }
         } while (bandera);
         
-        promedioEdad = sumaEdades/contadorIteraciones;
+        promedioEdad = (double)sumaEdades/contadorIteraciones;
         promedioEstatura = sumaEstaturas/contadorIteraciones;
         // Promedio de edades:  ?
-        cadenaReporte = String.format("%sPromedio de edades: %d\n", 
+       
+        cadenaReporte = String.format("%sPromedio de edades: %.2f\n", 
                 cadenaReporte, promedioEdad);
         // Promedio de estaturas: ?
         cadenaReporte = String.format("%sPromedio de estaturas: %.2f\n", 
                 cadenaReporte, promedioEstatura);
         // presentación de cadena final
-        System.out.printf("%s\n", cadenaReporte);
+        System.out.printf("%s lista edad --- %s\n", cadenaReporte,cadena_edad);
         
     }
 }

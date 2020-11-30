@@ -20,6 +20,7 @@ public class Ejemplo03 {
         do {
             System.out.println("Desea salir del ciclo; digite: si");
             salir = entrada.nextLine();
+            salir = salir.toLowerCase(); // para hacer la cadena en minuscula
             if(salir.equals("si")){
                 bandera = false;
             }
